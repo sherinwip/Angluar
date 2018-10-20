@@ -9,16 +9,21 @@ import {Component,Input, EventEmitter, Output} from '@angular/core'
     <div>Time:{{event.time}}</div>
     <div>Price:\${{event.price}}</div>
     <div>
-    <span>Location:{{event.location.address}}</span>
-    <span>&nbsp;</span>
-    <span>{{event.location.city}},{{event.location.country}}</span>
-    
+    <span>Location:{{event.location.address}}</span>   
+    <span class="pad-left">{{event.location.city}},{{event.location.country}}</span>    
+    </div>    
     </div>
-    <button class="btn btn-primary" (click)="handleClickMe()">Click me!</button>
-    </div>
-    `
+    `,
+    styles:[
+        `
+        .thumbnail {min-height:210px;}
+        .pad-left {margin-left :10px;}
+        
+        `
+    ]
         
     }
+    
 )
 export class EventThumbnailComponent{
 @Input() event:any;
